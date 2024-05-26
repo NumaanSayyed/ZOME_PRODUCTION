@@ -1,6 +1,6 @@
 const stats=[
     {
-        value: "Support 24/7"
+        value: "7 Days Availability"
     },
     {
         value: "Quality"
