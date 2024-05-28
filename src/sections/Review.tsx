@@ -8,7 +8,7 @@ function Features() {
             feedback: "Participating in this initiative has been a rewarding experience. The tangible impact of our efforts on the environment is truly motivating "
         },
         {
-            stud_name: "Hamza",
+            stud_name: "Bilal",
             feedback: "This program has significantly enhanced my understanding of carbon offsetting. It's empowering to contribute to such impactful environmental projects."
         },
         {
