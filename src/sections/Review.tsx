@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import person from '../assets/person.png';
+import person from '../assets/person-2.png';
 
 function Features() {
     const users = [
         {
-            stud_name: "Numan ",
-            feedback: "Participating in this initiative has been a rewarding experience. The tangible impact of our efforts on the environment is truly motivating "
+            stud_name: "Noor",
+            feedback: "These T-shirts are my new favorites quality soft, stylish, and perfect for any occasion. I’m constantly getting compliments! "
         },
         {
-            stud_name: "Bilal",
-            feedback: "This program has significantly enhanced my understanding of carbon offsetting. It's empowering to contribute to such impactful environmental projects."
+            stud_name: "Rahul Singh",
+            feedback: "Consistently impressed with this brand for bulk orders. Quality, reliability, and service are unbeatable!"
         },
         {
-            stud_name: "Tushar",
-            feedback: "The carbon compensation program is a fantastic way to make a real difference. It's inspiring to see how collective actions can lead to substantial change"
+            stud_name: "Raj Patel",
+            feedback: "Seriously impressed by the quality of these tees! The colors pop, the fabric is top-notch, and the overall quality is unbeatable. Highly recommend giving them a try—you won't be disappointed!"
         },
     ];
 
