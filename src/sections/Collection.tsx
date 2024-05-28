@@ -1,5 +1,5 @@
-import sd from '../assets/sd.jpeg'
-import bd from '../assets/bd.jpeg'
+import sd from '../assets/sd.png'
+import bd from '../assets/bd.png'
 import c1 from '../assets/c1.jpeg'
 import c2 from '../assets/c2.jpeg'
 import combo from '../assets/combo.jpeg'

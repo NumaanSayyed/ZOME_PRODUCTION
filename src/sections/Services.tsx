@@ -33,9 +33,9 @@ function Services() {
 
               <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
 
-                    {services.map((data)=>
+                    {services.map((data,index)=>
                     
-                        <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
+                        <div className="p-4 md:w-1/3 flex flex-col text-center items-center" key={index}>
                             <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
                                 <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-white   mb-5 flex-shrink-0">
                                  {data.svg}
