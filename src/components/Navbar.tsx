@@ -107,11 +107,13 @@ function App() {
                                             </button>
                                             {dropdownOpen && (
                                                 <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-10">
-                                                    <Link to="/history" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>History</Link>
-                                                    <Link to="/data" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>Data</Link>
+                                                    <Link to="/yourorders" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>Orders</Link>
+
+                                                    <Link to="/wishlist" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>Wishlist</Link>
+
                                                     <button
                                                         onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                                                        className="w-full text-left block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                                        className="text-white bg-gradient-to-r from-gray-700 to-gray-900 focus:ring-4 focus:outline-none hover:scale-110 font-medium rounded-lg shadow-lg shadow-black text-sm px-4 py-2 text-center"
                                                     >
                                                         Logout
                                                     </button>

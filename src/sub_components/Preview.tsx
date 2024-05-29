@@ -1,11 +1,26 @@
 import { useLocation, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import addToCart from '../assets/add-to-cart.png'
-function bottomToTop() {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-}
+import addToCart from '../assets/add-to-cart.png';
+import { useAuth0 } from '@auth0/auth0-react';
+import Swal from "sweetalert2";
 
 function Preview() {
+  const { isAuthenticated } = useAuth0();
+
+const notLoginAlert = ()=>{
+  Swal.fire({
+    title: "Please Login First",
+    icon: "error",
+    timer: 2000,
+    showConfirmButton: false
+  });
+}
+  const handleOrderlick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
+  };
+
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
@@ -13,6 +28,7 @@ function Preview() {
   const location = useLocation();
   const { from } = location.state;
   console.log(from);
+
 
   return (
     <>
@@ -52,17 +68,28 @@ function Preview() {
 
                 <span className="title-font font-medium text-2xl text-gray-900"> &nbsp;&#x20B9;{from.price}</span>
                 <div className="flex mt-4 sm:mt-0 sm:ml-auto space-x-4">
-                  <Link
-                    to="/order"
-                    state={{ from: from }}
-                    className="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded flex items-center justify-center"
-                    onClick={bottomToTop}
-                  >
-                    Order
-                  </Link>
+                {
+                    isAuthenticated ? (<Link
+                      to="/order"
+                      state={{ from: from }}
+                      className="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded flex items-center justify-center"
+                      onClick={handleOrderlick}
+                    >
+                      Order
+                    </Link>
+                    ):(
+                        <button
+                          className="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded flex items-center justify-center"
+                        onClick={notLoginAlert}
+                        >
+                          Buy Now
+                        </button>
+                    )
+                }
+
                   <button
                     className="text-white border-0 py-2 px-6 focus:outline-none hover:scale-125 rounded flex items-center justify-center"
-                    onClick={() => alert('Added to Cart')}
+
                   >
                     <img src={addToCart} className="h-6 w-6 sm:h-8 sm:w-8 md:h-6 md:w-6 lg:h-6 lg:w-6" alt="Add to Cart" />
                   </button>
@@ -78,18 +105,15 @@ function Preview() {
           </div>
         </div>
       </section>
-      <div className="bg-white">
-        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {/* Additional content can be added here */}
-          </div>
-        </div>
-      </div>
 
 
-      
+
+
+
     </>
   );
 }
 
 export default Preview;
+
+

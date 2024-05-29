@@ -73,7 +73,7 @@ function Features() {
                                     ))}
                                 </div>
                             </div>
-                            <button className="absolute top-1/2 transform -translate-y-1/2 left-0 text-black  border-0 py-2 px-4 focus:outline-none bg-gray-50 rounded-full" onClick={handlePrevTestimonial}>
+                            <button className="absolute top-1/2 transform -translate-y-1/2 left-0 text-black  border-0 py-2 px-4 focus:outline-none rounded-full" onClick={handlePrevTestimonial}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="w-6 h-6"
@@ -90,7 +90,7 @@ function Features() {
                                 </svg>
 
                             </button>
-                            <button className="absolute top-1/2 transform -translate-y-1/2 right-0 text-black  border-0 py-2 px-4 focus:outline-none bg-gray-50 rounded-full" onClick={handleNextTestimonial}>
+                            <button className="absolute top-1/2 transform -translate-y-1/2 right-0 text-black  border-0 py-2 px-4 focus:outline-none  rounded-full" onClick={handleNextTestimonial}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="w-6 h-6"
