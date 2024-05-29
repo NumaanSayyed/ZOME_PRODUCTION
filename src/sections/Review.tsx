@@ -32,8 +32,8 @@ function Features() {
             <section className="text-text body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="text-center mb-20">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font text-text mb-4">What Our Enrolled Participants Say</h1>
-                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Here are some testimonials from our students who enrolled for this program and now play a very crucial role in this project.</p>
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font text-text mb-4">What Our Customers Are Saying</h1>
+                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Customer Satisfaction in Their Own Words.</p>
                         <div className="flex mt-6 justify-center">
                             <div className="w-16 h-1 rounded-full bg-black inline-flex" />
                         </div>
