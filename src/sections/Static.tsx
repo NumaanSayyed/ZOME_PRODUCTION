@@ -27,7 +27,12 @@ function Static() {
                   <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
                       <div className="flex flex-wrap items-center">
                           <div className="block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
-                              <img src="https://i.postimg.cc/zDCyYFf5/organic-flat-feedback-concept-illustrated-23-2148951369.jpg" alt="Trendy Pants and Shoes" className="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
+                              <img
+                                  src="https://i.postimg.cc/zDCyYFf5/organic-flat-feedback-concept-illustrated-23-2148951369.jpg"
+                                  alt="Trendy Pants and Shoes"
+                                  className="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg sm:hidden lg:block"
+                              />
+
                           </div>
                           <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
                               <div className="px-6 py-12 md:px-12">
@@ -38,8 +43,8 @@ function Static() {
                                       Our satisfied services we provide to our customers,place your order by directly call us through call to action button.
                                   </p>
                                   <div className="mb-6 flex flex-wrap">
-                                      {stats.map((data)=>
-                                          <div className="mb-4 w-full md:w-4/12">
+                                      {stats.map((data,index)=>
+                                          <div className="mb-4 w-full md:w-4/12" key={index}>
                                               <p className="flex">
                                                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="mr-3 h-5 w-5 text-neutral-900 dark:text-neutral-80">
                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>{data.value}

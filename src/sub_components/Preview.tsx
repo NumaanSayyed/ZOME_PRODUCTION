@@ -20,8 +20,9 @@ function Preview() {
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <img
+
               alt="ecommerce"
-              className="w-full lg:w-1/3 lg:h-auto h-96 sm:h-64 object-cover object-center rounded"
+              className="w-full lg:w-1/3 lg:h-auto h-96 sm:h-64 object-cover object-center rounded cursor-pointer hover:scale-110"
               src={from.imageUrl}
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -47,6 +48,8 @@ function Preview() {
               <p className="leading-relaxed">Size: {from.desc.size.join(', ')}</p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5"></div>
               <div className="flex flex-col sm:flex-row items-center sm:items-start">
+                <span className="line-through text-red-500 text-lg">&#x20B9; 5000</span>
+
                 <span className="title-font font-medium text-2xl text-gray-900">&#x20B9; {from.price}</span>
                 <div className="flex mt-4 sm:mt-0 sm:ml-auto space-x-4">
                   <Link
@@ -81,6 +84,9 @@ function Preview() {
           </div>
         </div>
       </div>
+
+
+      
     </>
   );
 }

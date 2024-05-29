@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
  function App() {
+     const {isAuthenticated, logout, loginWithRedirect, user} = useAuth0();
+
      const [navbar, setNavbar] = useState(false);
     const items=[
         {
@@ -87,14 +90,30 @@ import { Link } from "react-router-dom";
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                               {
-                                items.map((data)=>
-                                    <li className="text-gray-600 transform transition hover:text-blue-600 hover:font-bold hover:scale-105">
+                                items.map((data,index)=>
+                                    <li className="text-gray-600 transform transition hover:text-blue-600 hover:font-bold hover:scale-105" key={index}>
                                         <Link to={data.route} onClick={closeNavbar}>{data.name}</Link>
                                     </li>
                                 )
                               }
-                                
-                           <button type="button" className="text-white bg-gradient-to-r from-blue-400 to-blue-600 focus:ring-4 focus:outline-none hover:scale-110 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center ">Login</button>
+                                {
+                                    isAuthenticated?(
+                                        <>
+                                            <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={user?.picture} alt="Bordered avatar" />
+                                            
+                                        <button
+                                            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                                                type="button" className="text-white bg-gradient-to-r from-gray-700 to-gray-900 focus:ring-4 focus:outline-none hover:scale-110  shadow-lg shadow-black- dark:shadow-lg dark:shadow-black font-medium rounded-lg text-sm px-4 py-2 text-center ">Logout</button>
+                                            
+                                       </>
+
+                                    ):(
+                                            <button
+                                                onClick={() => loginWithRedirect()}
+                                                type="button" className="text-white bg-gradient-to-r from-gray-700 to-gray-900 focus:ring-4 focus:outline-none hover:scale-110  font-medium rounded-lg shadow-lg shadow-black- dark:shadow-lg dark:shadow-black text-sm px-4 py-2 text-center " >Login</button>
+                                    )
+                                }
+                       
                             </ul>
 
                         </div>
