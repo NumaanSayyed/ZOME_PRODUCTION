@@ -1,4 +1,4 @@
-import sd from '../assets/sd.png'
+import person1 from '../assets/person1.jpg'
 function Carousel() {
   return (
     <>
@@ -26,9 +26,10 @@ function Carousel() {
                   <i className="fab fa-youtube"></i></button> </a> */}
             </div>
     </div>
-    <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-      <img src={sd} alt="numan sd" />
-    </div>
+    <div className="hidden lg:mt-0 lg:col-span-5 lg:flex bg-transparent">
+  <img src={person1} alt="person Image" className="w-1/3 lg:w-full rounded-xl" />
+</div>
+
   </div>
 </section>
 

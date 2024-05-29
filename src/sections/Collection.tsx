@@ -1,9 +1,9 @@
 import sd from '../assets/sd.png'
-import bd from '../assets/bd.png'
+import YelloT from '../assets/YellowT.png'
 import c1 from '../assets/c1.jpeg'
 import c2 from '../assets/c2.jpeg'
 import combo from '../assets/combo.jpeg'
-import polo from '../assets/polo.jpeg'
+import HangT from '../assets/HangT.jpg'
 function Collection() {
   return (
   <>
@@ -50,13 +50,13 @@ function Collection() {
                           <img
                               alt="gallery"
                               className="block h-full w-full rounded-lg object-cover object-center"
-                              src={bd}/>
+                              src={YelloT}/>
                       </div>
                       <div className="w-1/2 p-1 md:p-2  hover:scale-105" >
                           <img
                               alt="gallery"
                               className="block h-full w-full rounded-lg object-cover object-center"
-                              src={polo} />
+                              src={HangT} />
                       </div>
                       <div className="w-1/2 p-1 md:p-2  hover:scale-105">
                           <img
