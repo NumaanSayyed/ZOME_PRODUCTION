@@ -16,6 +16,10 @@ import { useAuth0 } from "@auth0/auth0-react";
             route:"/gallery"
         },
         {
+            name:"Cart",
+            route:"/"
+        },
+        {
             name:"Contact",
             route:"/contact"
         },
@@ -34,8 +38,7 @@ import { useAuth0 } from "@auth0/auth0-react";
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
                           
-                            <div className="mb-2 sm:mb-0 flex flex-row
-  ">
+                            <div className="mb-2 sm:mb-0 flex flex-row">
                                 <div className="h-10 w-10 self-center mr-2">
                                     <img className="h-10 w-10 self-center" src="https://i.postimg.cc/sXj4vNg9/Screenshot-2023-08-21-224300.png" />
                                 </div>
