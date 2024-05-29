@@ -2,30 +2,35 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
- function App() {
-     const {isAuthenticated, logout, loginWithRedirect, user} = useAuth0();
+function App() {
+    const { isAuthenticated, logout, loginWithRedirect, user } = useAuth0();
+    const [navbar, setNavbar] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
-     const [navbar, setNavbar] = useState(false);
-    const items=[
+    const items = [
         {
-            name:"Home",
-            route:"/"
+            name: "Home",
+            route: "/"
         },
         {
-            name:"Shop",
-            route:"/gallery"
+            name: "Shop",
+            route: "/gallery"
         },
         {
-            name:"Contact",
-            route:"/contact"
+            name: "Contact",
+            route: "/contact"
         },
-    ]
-   
+    ];
 
-     // Function to close the navbar
-     const closeNavbar = () => {
-         setNavbar(false);
-     };
+    // Function to close the navbar
+    const closeNavbar = () => {
+        setNavbar(false);
+    };
+
+    // Function to toggle the dropdown menu
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
 
     return (
         <>
@@ -33,14 +38,12 @@ import { useAuth0 } from "@auth0/auth0-react";
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                          
-                            <div className="mb-2 sm:mb-0 flex flex-row
-  ">
+                            <div className="mb-2 sm:mb-0 flex flex-row">
                                 <div className="h-10 w-10 self-center mr-2">
-                                    <img className="h-10 w-10 self-center" src="https://i.postimg.cc/sXj4vNg9/Screenshot-2023-08-21-224300.png" />
+                                    <img className="h-10 w-10 self-center" src="https://i.postimg.cc/sXj4vNg9/Screenshot-2023-08-21-224300.png" alt="Logo" />
                                 </div>
                                 <div>
-                                    <a href="/" className="text-2xl no-underline text-grey-darkest hover:text-blue-dark font-sans font-bold">X Y ZOME</a><br/>
+                                    <a href="/" className="text-2xl no-underline text-grey-darkest hover:text-blue-dark font-sans font-bold drop-shadow-lg">X Y ZOME</a><br />
                                     <span className="text-xs text-grey-dark">Threads of Trendy Expression</span>
                                 </div>
                             </div>
@@ -89,43 +92,49 @@ import { useAuth0 } from "@auth0/auth0-react";
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                              {
-                                items.map((data,index)=>
-                                    <li className="text-gray-600 transform transition hover:text-blue-600 hover:font-bold hover:scale-105" key={index}>
-                                        <Link to={data.route} onClick={closeNavbar}>{data.name}</Link>
-                                    </li>
-                                )
-                              }
                                 {
-                                    isAuthenticated?(
-                                        <>
-                                            <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={user?.picture} alt="Bordered avatar" />
-                                            
-                                        <button
-                                            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                                                type="button" className="text-white bg-gradient-to-r from-gray-700 to-gray-900 focus:ring-4 focus:outline-none hover:scale-110  shadow-lg shadow-black- dark:shadow-lg dark:shadow-black font-medium rounded-lg text-sm px-4 py-2 text-center ">Logout</button>
-                                            
-                                       </>
-
-                                    ):(
-                                            <button
-                                                onClick={() => loginWithRedirect()}
-                                                type="button" className="text-white bg-gradient-to-r from-gray-700 to-gray-900 focus:ring-4 focus:outline-none hover:scale-110  font-medium rounded-lg shadow-lg shadow-black- dark:shadow-lg dark:shadow-black text-sm px-4 py-2 text-center " >Login</button>
+                                    items.map((data, index) =>
+                                        <li className="text-gray-600 transform transition hover:text-gray-600 hover:font-bold hover:scale-105" key={index}>
+                                            <Link to={data.route} onClick={closeNavbar}>{data.name}</Link>
+                                        </li>
                                     )
                                 }
-                       
+                                {
+                                    isAuthenticated ? (
+                                        <div className="relative">
+                                            <button onClick={toggleDropdown} className="flex items-center space-x-3">
+                                                <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={user?.picture} alt="User avatar" />
+                                            </button>
+                                            {dropdownOpen && (
+                                                <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-10">
+                                                    <Link to="/history" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>History</Link>
+                                                    <Link to="/data" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>Data</Link>
+                                                    <button
+                                                        onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                                                        className="w-full text-left block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                                    >
+                                                        Logout
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <button
+                                            onClick={() => loginWithRedirect()}
+                                            type="button"
+                                            className="text-white bg-gradient-to-r from-gray-700 to-gray-900 focus:ring-4 focus:outline-none hover:scale-110 font-medium rounded-lg shadow-lg shadow-black text-sm px-4 py-2 text-center"
+                                        >
+                                            Login
+                                        </button>
+                                    )
+                                }
                             </ul>
-
                         </div>
                     </div>
                 </div>
             </nav>
-
-
         </>
     );
 }
 
 export default App;
-
-

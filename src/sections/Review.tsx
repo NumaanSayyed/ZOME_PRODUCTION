@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import person from '../assets/person.png';
+import person from '../assets/person.jpg';
 
 function Features() {
     const users = [
         {
             stud_name: "Numan ",
-            feedback: "Participating in this initiative has been a rewarding experience. The tangible impact of our efforts on the environment is truly motivating "
+            feedback: "I love the t- shirts from X Y ZOME! The quality is amazing, and the designs are trendy.The customer service is excellent, making my shopping experience delightful."
         },
         {
             stud_name: "Hamza",
-            feedback: "This program has significantly enhanced my understanding of carbon offsetting. It's empowering to contribute to such impactful environmental projects."
+            feedback: "Zome is my go-to wholesaler for t-shirts. Competitive prices and top-notch quality keep my customers happy. The variety and prompt delivery are impressive."
         },
         {
             stud_name: "Tushar",
-            feedback: "The carbon compensation program is a fantastic way to make a real difference. It's inspiring to see how collective actions can lead to substantial change"
+            feedback: "Organizing events is easier with X Y ZOME. Their customizable t-shirts, vibrant colors, and excellent quality impress our participants. The affordable pricing and timely delivery. "
         },
     ];
 
@@ -32,8 +32,8 @@ function Features() {
             <section className="text-text body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="text-center mb-20">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font text-text mb-4">What Our Enrolled Participants Say</h1>
-                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Here are some testimonials from our students who enrolled for this program and now play a very crucial role in this project.</p>
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font text-text mb-4">What Our Customers Says</h1>
+                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Here are some feedback from our regular customers who's business also operate on the very large customer based.</p>
                         <div className="flex mt-6 justify-center">
                             <div className="w-16 h-1 rounded-full bg-black inline-flex" />
                         </div>

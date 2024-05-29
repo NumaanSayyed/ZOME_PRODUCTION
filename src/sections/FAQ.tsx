@@ -3,16 +3,20 @@ import { useState } from 'react';
 function FAQ() {
     const FAQ1 = [
         {
-            question: "Do we offer any discount ",
-            answer: "It's a credit which you get for each project you do by the service provider under which you doing that program,Initially you get -1000 points and as you contribute something for the enviornment it moves towards positive"
+            question: " What sizes do we offer?",
+            answer: "We offer sizes ranging from all size, from S to XL."
         },
         {
-            question: "How do I track the impact of my contributions?",
-            answer: "You will get the carbon cre"
+            question: "Do you have a physical store?",
+            answer: "No, we operate exclusively online to keep our prices affordable and offer a wider selection for our customers."
         },
         {
-            question: "What are the benefits of carbon compensation?",
-            answer: "First of all you save the earth, and for the student who enrolled for the program will also get completion certificate of internship "
+            question: "Where are your T-shirts made?",
+            answer: "Our T-shirts are ethically made in various locations around the India, ensuring high-quality and fair labor practices. "
+        },
+        {
+            question: " Do you offer any discounts for bulk orders?",
+            answer: "Yes, we offer discounts for bulk orders. Please contact us for more information. "
         },
 
 
@@ -20,16 +24,20 @@ function FAQ() {
     const FAQ2 = [
 
         {
-            question: "Do I receive a certificate for my contributions?",
-            answer: "Yes, participants often receive certificates acknowledging that they have done contributed/perform activity which impacts to the enviornment."
+            question: "How do I place an order?",
+            answer: "Simply browse our collection, select the items you like, choose your size and color, and click, proceed to checkout."
         },
         {
-            question: "Can businesses also participate in carbon compensation?",
-            answer: "Our participant's are not only limited just with students, each person has responsibility to save the enviornment."
+            question: " Do you offer custom T-shirt designs?",
+            answer: "Yes, we offer custom T-shirt printing. Please contact our customer service team for more details."
         },
         {
-            question: "What happens if I fails to deliver the promised offset?",
-            answer: "In such case you won't get the certificate "
+            question: "How can I contact customer service?",
+            answer: "You can reach our customer service team via email at xyzome03@gmail..com or you can also WhatsApp us ."
+        },
+        {
+            question: "How can I stay updated on your latest promotions?",
+            answer: "Get logged in to our site for newsletter to receive updates on new arrivals, special offers, and exclusive discounts. ."
         },
     ];
 
