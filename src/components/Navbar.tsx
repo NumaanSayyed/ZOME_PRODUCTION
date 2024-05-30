@@ -113,7 +113,7 @@ function App() {
 
                                                     <button
                                                         onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                                                        className="text-white bg-gradient-to-r from-gray-700 to-gray-900 focus:ring-4 focus:outline-none hover:scale-110 font-medium rounded-lg shadow-lg shadow-black text-sm px-4 py-2 text-center"
+                                                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                                                     >
                                                         Logout
                                                     </button>

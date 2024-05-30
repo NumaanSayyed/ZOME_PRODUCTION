@@ -1,9 +1,8 @@
 import { useLocation, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import addToCart from '../assets/add-to-cart.png';
+// import addToCart from '../assets/add-to-cart.png';
 import { useAuth0 } from '@auth0/auth0-react';
 import Swal from "sweetalert2";
-
 function Preview() {
   const { isAuthenticated } = useAuth0();
 
@@ -68,7 +67,7 @@ const notLoginAlert = ()=>{
 
                 <span className="title-font font-medium text-2xl text-gray-900"> &nbsp;&#x20B9;{from.price}</span>
                 <div className="flex mt-4 sm:mt-0 sm:ml-auto space-x-4">
-                {
+                {/* {
                     isAuthenticated ? (<Link
                       to="/order"
                       state={{ from: from }}
@@ -85,14 +84,22 @@ const notLoginAlert = ()=>{
                           Buy Now
                         </button>
                     )
-                }
-
-                  <button
+                } */}
+                  <Link
+                    to="/order"
+                    state={{ from: from }}
+                    className="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded flex items-center justify-center"
+                    onClick={handleOrderlick}
+                  >
+                    Order
+                  </Link>
+                 { /*<button
                     className="text-white border-0 py-2 px-6 focus:outline-none hover:scale-125 rounded flex items-center justify-center"
 
                   >
                     <img src={addToCart} className="h-6 w-6 sm:h-8 sm:w-8 md:h-6 md:w-6 lg:h-6 lg:w-6" alt="Add to Cart" />
                   </button>
+              */}
                 </div>
 
                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 mt-4 sm:mt-0 ml-4 hover:bg-gray-300">
