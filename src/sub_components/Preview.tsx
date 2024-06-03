@@ -45,16 +45,19 @@ const notLoginAlert = ()=>{
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">Elevate Your Style</h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
-                  {[...Array(4)].map((_, i) => (
+                  {[...Array(Math.floor(from.review / 1000))].map((_, i) => (
                     <svg key={i} fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   ))}
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                  <span className="text-gray-600 ml-3">4 Reviews</span>
+                  {[...Array(5 - Math.floor(from.review / 1000))].map((_, i) => (
+                    <svg key={i} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                  <span className="text-gray-600 ml-3">{from.review} Reviews</span>
                 </span>
+                  
               </div>
               <p className="leading-relaxed">{from.desc.name}</p>
               <p className="leading-relaxed">Fabric: {from.desc.fabric}</p>
@@ -67,7 +70,7 @@ const notLoginAlert = ()=>{
 
                 <span className="title-font font-medium text-2xl text-gray-900"> &nbsp;&#x20B9;{from.price}</span>
                 <div className="flex mt-4 sm:mt-0 sm:ml-auto space-x-4">
-                {/* {
+                {
                     isAuthenticated ? (<Link
                       to="/order"
                       state={{ from: from }}
@@ -84,15 +87,8 @@ const notLoginAlert = ()=>{
                           Buy Now
                         </button>
                     )
-                } */}
-                  <Link
-                    to="/order"
-                    state={{ from: from }}
-                    className="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded flex items-center justify-center"
-                    onClick={handleOrderlick}
-                  >
-                    Order
-                  </Link>
+                }
+                 {/* ADD TO CART BUTTON  */}
                  { /*<button
                     className="text-white border-0 py-2 px-6 focus:outline-none hover:scale-125 rounded flex items-center justify-center"
 
