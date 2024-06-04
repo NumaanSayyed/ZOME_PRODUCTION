@@ -2,10 +2,10 @@
     {
         "id": 1,
         "name": "Full Sleeve",
-        "color": "YELLOW",
+        "color": "Yellow",
         "actualPrice": 399,
         "price": 250,
-        "imageUrl": "public/1.png",
+        "imageUrl": "/1.png",
         "desc": {
             "name": "Men's Full Sleeve T-shirt Cotton Blend (Yellow printed tee) Casual Wear ",
             "fabric": "Cotton Blend",
@@ -22,10 +22,10 @@
     {
         "id": 2,
         "name": "Full Sleeve",
-        "color": "WHITE+PINK",
+        "color": "White+Pink",
         "actualPrice": 300,
         "price": 200,
-        "imageUrl": "public/5.jpeg",
+        "imageUrl": "/5.jpeg",
         "desc": {
             "name": "Men's Full T-shirt PopCorn Fabric (Pink And White) Casual Wear ",
             "fabric": "PopCorn Fabric",
@@ -43,10 +43,10 @@
     {
         "id": 3,
         "name": "Full Sleeve",
-        "color": "RED",
+        "color": "Red",
         "actualPrice": 466,
         "price": 230,
-        "imageUrl": "public/15.jpeg",
+        "imageUrl": "/15.jpeg",
         "desc": {
             "name": "Men's Full T-shirt Silk Fabric (Red with NY printed) Casual Wear ",
             "fabric": "Silk ",
